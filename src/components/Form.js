@@ -6,57 +6,64 @@ class Form extends React.Component {
       <div>
         <form className="formStyle">
 
-          <label>
+          <label htmlFor="name">
             Nome
             <input
+              id="name"
               data-testid="name-input"
               type="text"
             />
           </label>
 
-          <label>
+          <label htmlFor="description">
             Descrição
             <input
+              id="description"
               data-testid="description-input"
               type="textarea"
             />
           </label>
 
-          <label>
-            Attr01
+          <label htmlFor="attr1">
+            Atributo 1
             <input
+              id="attr1"
               data-testid="attr1-input"
               type="number"
             />
           </label>
 
-          <label>
-            Attr02
+          <label htmlFor="attr2">
+            Atributo 2
             <input
+              id="attr2"
               data-testid="attr2-input"
               type="number"
             />
           </label>
 
-          <label>
-            Attr03
+          <label htmlFor="attr3">
+            Atributo 3
             <input
+              id="attr3"
               data-testid="attr3-input"
               type="number"
             />
           </label>
 
-          <label>
+          <label htmlFor="image">
             Imagem
             <input
+              id="image"
               data-testid="image-input"
               type="text"
             />
           </label>
 
-          <label>
+          <label htmlFor="rare">
             Raridade
             <select
+              id="rare"
               data-testid="rare-input"
             >
               <option value="normal">normal</option>
@@ -65,9 +72,10 @@ class Form extends React.Component {
             </select>
           </label>
 
-          <label>
+          <label htmlFor="checkbox">
             Super Trybe Trunfo
             <input
+              id="checkbox"
               data-testid="trunfo-input"
               type="checkbox"
             />
