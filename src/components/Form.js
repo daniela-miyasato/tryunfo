@@ -26,6 +26,7 @@ class Form extends React.Component {
             Nome
             <input
               id="name"
+              name="name"
               data-testid="name-input"
               type="text"
               value={ cardName }
@@ -37,6 +38,7 @@ class Form extends React.Component {
             Descrição
             <input
               id="description"
+              name="description"
               data-testid="description-input"
               type="textarea"
               value={ cardDescription }
@@ -48,6 +50,7 @@ class Form extends React.Component {
             Atributo 1
             <input
               id="attr1"
+              name="attr1"
               data-testid="attr1-input"
               type="number"
               value={ cardAttr1 }
@@ -59,6 +62,7 @@ class Form extends React.Component {
             Atributo 2
             <input
               id="attr2"
+              name="attr2"
               data-testid="attr2-input"
               type="number"
               value={ cardAttr2 }
@@ -70,6 +74,7 @@ class Form extends React.Component {
             Atributo 3
             <input
               id="attr3"
+              name="attr3"
               data-testid="attr3-input"
               type="number"
               value={ cardAttr3 }
@@ -81,6 +86,7 @@ class Form extends React.Component {
             Imagem
             <input
               id="image"
+              name="image"
               data-testid="image-input"
               type="text"
               value={ cardImage }
@@ -92,6 +98,7 @@ class Form extends React.Component {
             Raridade
             <select
               id="rare"
+              name="rare"
               data-testid="rare-input"
               value={ cardRare }
               onChange={ onInputChange }
@@ -102,10 +109,11 @@ class Form extends React.Component {
             </select>
           </label>
 
-          <label htmlFor="checkbox">
+          <label htmlFor="superTrunfo">
             Super Trybe Trunfo
             <input
-              id="checkbox"
+              id="superTrunfo"
+              name="superTrunfo"
               data-testid="trunfo-input"
               type="checkbox"
               checked={ cardTrunfo }
@@ -116,6 +124,7 @@ class Form extends React.Component {
           <button
             data-testid="save-button"
             type="submit"
+            name="button"
             disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
           >
@@ -126,6 +135,11 @@ class Form extends React.Component {
     );
   }
 }
+
+// Notes
+// Only form elements with a name attribute will have their values passed when submitting a form.
+// class --> className (classe da propriedade)
+// for --> htmlFor (para linkar a label com o input)
 
 Form.propTypes = {
   cardName: PropTypes.string.isRequired,
