@@ -21,12 +21,17 @@ class Form extends React.Component {
     return (
       <div>
         <form className="formStyle">
-
+          {
+          // Notes
+          // Only form elements with a name attribute will have their values passed when submitting a form.
+          // class --> className (classe da propriedade)
+          // for --> htmlFor (para linkar a label com o input)
+          }
           <label htmlFor="name">
             Nome
             <input
               id="name"
-              name="name"
+              name="cardName"
               data-testid="name-input"
               type="text"
               value={ cardName }
@@ -38,7 +43,7 @@ class Form extends React.Component {
             Descrição
             <input
               id="description"
-              name="description"
+              name="cardDescription"
               data-testid="description-input"
               type="textarea"
               value={ cardDescription }
@@ -50,7 +55,7 @@ class Form extends React.Component {
             Atributo 1
             <input
               id="attr1"
-              name="attr1"
+              name="cardAttr1"
               data-testid="attr1-input"
               type="number"
               value={ cardAttr1 }
@@ -62,7 +67,7 @@ class Form extends React.Component {
             Atributo 2
             <input
               id="attr2"
-              name="attr2"
+              name="cardAttr2"
               data-testid="attr2-input"
               type="number"
               value={ cardAttr2 }
@@ -74,7 +79,7 @@ class Form extends React.Component {
             Atributo 3
             <input
               id="attr3"
-              name="attr3"
+              name="cardAttr3"
               data-testid="attr3-input"
               type="number"
               value={ cardAttr3 }
@@ -86,7 +91,7 @@ class Form extends React.Component {
             Imagem
             <input
               id="image"
-              name="image"
+              name="cardImage"
               data-testid="image-input"
               type="text"
               value={ cardImage }
@@ -98,7 +103,7 @@ class Form extends React.Component {
             Raridade
             <select
               id="rare"
-              name="rare"
+              name="cardRare"
               data-testid="rare-input"
               value={ cardRare }
               onChange={ onInputChange }
@@ -112,8 +117,8 @@ class Form extends React.Component {
           <label htmlFor="superTrunfo">
             Super Trybe Trunfo
             <input
-              id="superTrunfo"
-              name="superTrunfo"
+              id="cardTrunfo"
+              name="cardTrunfo"
               data-testid="trunfo-input"
               type="checkbox"
               checked={ cardTrunfo }
@@ -135,11 +140,6 @@ class Form extends React.Component {
     );
   }
 }
-
-// Notes
-// Only form elements with a name attribute will have their values passed when submitting a form.
-// class --> className (classe da propriedade)
-// for --> htmlFor (para linkar a label com o input)
 
 Form.propTypes = {
   cardName: PropTypes.string.isRequired,
