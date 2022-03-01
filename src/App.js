@@ -17,6 +17,7 @@ class App extends React.Component {
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
+      cardsList: [],
     };
 
     // this.onInputChange = this.onInputChange.bind(this);
@@ -30,6 +31,51 @@ class App extends React.Component {
     this.setState({
       [name]: value,
     }, () => this.validate());
+  }
+
+  // The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+  // Clicking on a "Submit" button, prevent it from submitting a form
+  // https://www.w3schools.com/jsref/event_preventdefault.asp
+
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+    // pega os estados
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    } = this.state;
+
+    // guarda numa constante
+    const newCard = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    };
+
+    // método da aula ao vivo 11.2 (23m)
+    // altera os valores do estado anterior
+    this.setState((prevState) => ({ cardsList: [...prevState.cardsList, newCard] }));
+    this.setState({
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: 0,
+      cardAttr2: 0,
+      cardAttr3: 0,
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
+    });
   }
 
   validate = () => {
