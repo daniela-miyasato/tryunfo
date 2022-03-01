@@ -75,7 +75,7 @@ class App extends React.Component {
       cardImage: '',
       cardRare: 'normal',
       cardTrunfo: false,
-    });
+    }, () => this.validateTrunfo());
   }
 
   validate = () => {
@@ -110,6 +110,12 @@ class App extends React.Component {
       this.setState({ isSaveButtonDisabled: true });
     }
   };
+
+  validateTrunfo = () => {
+    const { cardsList } = this.state;
+    const thereIsTrunfo = cardsList.some((element) => element.cardTrunfo === true);
+    this.setState({ hasTrunfo: thereIsTrunfo });
+  }
 
   render() {
     const {
