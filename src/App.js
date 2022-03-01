@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import './style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,8 +29,41 @@ class App extends React.Component {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: value,
-    });
+    }, () => this.validate());
   }
+
+  validate = () => {
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+    } = this.state;
+
+    const fields = [cardName, cardDescription, cardImage, cardRare];
+    const noEmptyFields = fields.every((element) => element !== '');
+
+    const attr1 = Number(cardAttr1);
+    const attr2 = Number(cardAttr2);
+    const attr3 = Number(cardAttr3);
+    const sumMax = 210;
+    const max = 90;
+
+    const sumOfAttr = ((attr1 + attr2 + attr3) <= sumMax);
+
+    const checkAttr1 = attr1 >= 0 && attr1 <= max;
+    const checkAttr2 = attr2 >= 0 && attr2 <= max;
+    const checkAttr3 = attr3 >= 0 && attr3 <= max;
+
+    if (noEmptyFields && sumOfAttr && checkAttr1 && checkAttr2 && checkAttr3) {
+      this.setState({ isSaveButtonDisabled: false });
+    } else {
+      this.setState({ isSaveButtonDisabled: true });
+    }
+  };
 
   render() {
     const {

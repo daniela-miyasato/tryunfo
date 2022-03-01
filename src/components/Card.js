@@ -15,7 +15,7 @@ class Card extends React.Component {
     } = this.props;
 
     return (
-      <div>
+      <div className="card-cointainer">
         <h2 data-testid="name-card">
           { cardName }
         </h2>
