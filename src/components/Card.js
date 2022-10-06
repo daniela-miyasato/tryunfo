@@ -39,7 +39,7 @@ class Card extends React.Component {
         <p data-testid="rare-card">
           { cardRare }
         </p>
-        { // https://pt-br.reactjs.org/docs/conditional-rendering.html (If inline com o Operador Lógico &&)
+        { 
           cardTrunfo && <p data-testid="trunfo-card">Super Trunfo</p>
         }
       </div>

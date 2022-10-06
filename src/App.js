@@ -18,13 +18,9 @@ class App extends React.Component {
       hasTrunfo: false,
       isSaveButtonDisabled: true,
       cardsList: [],
-    };
-
-    // this.onInputChange = this.onInputChange.bind(this);
-    // this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    }; this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
-  // event handler genérico - atualiza o estado de todos os componentes com a mesma lógica
   onInputChange = ({ target }) => {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -32,10 +28,6 @@ class App extends React.Component {
       [name]: value,
     }, () => this.validate());
   }
-
-  // The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
-  // Clicking on a "Submit" button, prevent it from submitting a form
-  // https://www.w3schools.com/jsref/event_preventdefault.asp
 
   onSaveButtonClick = (event) => {
     event.preventDefault();
@@ -63,7 +55,6 @@ class App extends React.Component {
       cardTrunfo,
     };
 
-    // método da aula ao vivo 11.2 (23m)
     // altera os valores do estado anterior
     this.setState((prevState) => ({ cardsList: [...prevState.cardsList, newCard] }));
     this.setState({

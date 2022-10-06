@@ -21,12 +21,6 @@ class Form extends React.Component {
     return (
       <div>
         <form className="formStyle">
-          {
-          // Notes
-          // Only form elements with a name attribute will have their values passed when submitting a form.
-          // class --> className (classe da propriedade)
-          // for --> htmlFor (para linkar a label com o input)
-          }
           <label htmlFor="name">
             Nome
             <input
